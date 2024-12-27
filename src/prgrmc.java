@@ -58,8 +58,7 @@ public class prgrmc {
         titre.setBounds(150, 10, 400, 30);
         frame.add(titre);
         
-           // Rendre la fenêtre visible
-        frame.setVisible(true); 
+
 		
 		//on génère aléatoirement le nombre à atteindre a = min + (int) 
 		a = min + (int) (Math.random() * (max - min + 1)); 
@@ -120,7 +119,9 @@ public class prgrmc {
 		JButton egal = new JButton("calculer");
         egal.setBounds(400, 175, 100, 20);
         frame.add(egal);
-        
+
+		// Rendre la fenêtre visible
+		frame.setVisible(true);
         
 		/*int duree = 30; // Durée du timer en secondes
         long fin = System.currentTimeMillis() + (duree * 1000); // Temps de fin
