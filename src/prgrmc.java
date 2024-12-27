@@ -142,74 +142,80 @@ public class prgrmc {
 
                     String texte1 = nombre1.getText();
                     int nb1 = Integer.parseInt(texte1);
+
                     while (nb1 != T[m] && m < 6) {
                         m = m + 1;
+                    }// on vérifie que le nombre entré est bien dans le tableau
 
-                        if (m == 6) {
-                            message.setText("vous devez entrer une valeur du tableau pour nb1");
-                        } else {
-                            String texte2 = nombre2.getText();
-                            int nb2 = Integer.parseInt(texte2);
-                            while (nb1 != T[m] && m < 6) {
-                                System.out.println("m = " + m + " T[m] = " + T[m] + "k = " + k);
-                                k = k + 1;
-                            }
-                            if (k == 6) {
-                                message.setText("vous devez entrer une valeur du tableau pour nb2");
-                            } else {
-                                String operation = egal.getText();
-                                char op = operation.charAt(0);
-                                if (op == '+') {
-                                    nb = nb1 + nb2;
-                                    T[k] = 0;
-                                    T[m] = nb;
-                                } else if (op == '-') {
-                                    nb = nb1 - nb2;
-                                    T[k] = 0;
-                                    T[m] = nb;
-                                } else if (op == '*') {
-                                    nb = nb1 * nb2;
-                                    T[k] = 0;
-                                    T[m] = nb;
-                                } else if (op == '/') {
-                                    nb = nb1 / nb2;
-                                    T[k] = 0;
-                                    T[m] = nb;
-                                } else {
-                                    message.setText("vous devez entrer une operation valide");
+                    if (m == 6) {
+                        message.setText("vous devez entrer une valeur du tableau pour nb1");
+                        return;// on sort de la fonction
+                    }
 
-                                }
-                                int s = 0; // Initialisation de s
-                                for (int idx = 0; idx < 5; idx++) { // idx remplace le conflit "e"
-                                    s += T[idx];
+                    System.out.println("nb1:"+nb1);
+                    String texte2 = nombre2.getText();
+                    int nb2 = Integer.parseInt(texte2);
+                    while (nb1 != T[m] && m < 6) {
+                        System.out.println("m = " + m + "; T[m] = " + T[m] + "; k = " + k);
+                        k = k + 1;
+                    }
+                    if (k == 6) {
+                        message.setText("vous devez entrer une valeur du tableau pour nb2");
+                        return;// on sort de la fonction
+                    }
 
-                                }
-                                int y = 0;
-                                JLabel nvnombres = new JLabel(String.valueOf(s));
-                                nvnombres.setBounds(250 + y * 30, 300, 100, 30); // on affiche les nombres sur la même ligne
-                                frame.add(nvnombres);
-                                frame.revalidate();
-                                frame.repaint();
+                    System.out.println("nb2:"+nb2);
 
-
-                            }
-                        }
+                    String operation = egal.getText();
+                    char op = operation.charAt(0);
+                    System.out.println("op:"+op);
+                    if (op == '+') {
+                        nb = nb1 + nb2;
+                        T[k] = 0;
+                        T[m] = nb;
+                    } else if (op == '-') {
+                        nb = nb1 - nb2;
+                        T[k] = 0;
+                        T[m] = nb;
+                    } else if (op == '*') {
+                        nb = nb1 * nb2;
+                        T[k] = 0;
+                        T[m] = nb;
+                    } else if (op == '/') {
+                        nb = nb1 / nb2;
+                        T[k] = 0;
+                        T[m] = nb;
+                    } else {
+                        message.setText("vous devez entrer une operation valide");
+                        return;// on sort de la fonction
 
                     }
+                    // maintenant, on a nb
+
+
+                    int s = 0; // Initialisation de s
+                    for (int idx = 0; idx < 5; idx++) { // idx remplace le conflit "e"
+                        s += T[idx];
+
+                    }
+                    int y = 0;
+                    JLabel nvnombres = new JLabel(String.valueOf(s));
+                    nvnombres.setBounds(250 + y * 30, 300, 100, 30); // on affiche les nombres sur la même ligne
+                    frame.add(nvnombres);
+                    frame.revalidate();
+                    frame.repaint();
 
 
                 }
-
-
             }
 
-            ;
+
         });
 
-
-//}
     }
+
 }
+
 
 
 
