@@ -135,6 +135,9 @@ public class prgrmc {
         egal.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == egal) {
+
+                    message.setText(" ");// on supprime les messages d'erreur
+
                     int m = 0;
                     int k = 0;
                     int nf = 0;
