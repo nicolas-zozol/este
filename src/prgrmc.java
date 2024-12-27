@@ -166,8 +166,8 @@ public class prgrmc {
 
                     System.out.println("nb2:"+nb2);
 
-                    String operation = egal.getText();
-                    char op = operation.charAt(0);
+                    String operationText = operation.getText();
+                    char op = operationText.charAt(0);
                     System.out.println("op:"+op);
                     if (op == '+') {
                         nb = nb1 + nb2;
